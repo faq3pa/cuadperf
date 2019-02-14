@@ -1,6 +1,6 @@
-def cuadperf(n):
-    if n<=0 or n>31:
-        return print('PROBA ENTRE 1 y 31')
+def sqrsum(n):
+    if n<=0 or n>50:
+        return print('TRY BETWEEN 1 AND 50')
     DJ = {}
     squares = []
     results = []
@@ -33,10 +33,11 @@ def cuadperf(n):
                 yield list(path)
         yield from search()
     for i in range(1, n+1):
-        for i in sorted(paths(DJ,i)):
-            if len(i)==n:
-                results.append(i)
+        if len(DJ[i])==1:
+            for j in sorted(paths(DJ,i)):
+                if len(j)==n:
+                    results.append(j)
     if results==[]:
-        return print ('NO HAY RESULTADOS')
+        return print ('NO RESULTS')
     for i in results:
         print(i)

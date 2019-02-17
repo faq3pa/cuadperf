@@ -32,12 +32,22 @@ def sqrsum(n):
             if dead_end:
                 yield list(path)
         yield from search()
-    for i in range(1, n+1):
-        if len(DJ[i])==1:
+    
+
+    if n<=30:
+        for i in range(1, n+1):
             for j in sorted(paths(DJ,i)):
                 if len(j)==n:
-                    results.append(j)
+                    if j[::-1] not in results:
+                        results.append(j)
+    else:
+        for i in range(1, n+1):
+            for j in sorted(paths(DJ,i)):
+                if len(j)==n:
+                    if j[::-1] not in results:
+                        results.append(j)
     if results==[]:
         return print ('NO RESULTS')
     for i in results:
         print(i)
+    print(len(results))

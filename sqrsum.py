@@ -1,4 +1,7 @@
 def sqrsum(n):
+    import time
+    start = time.time()
+
     if n<=0 or n>50:
         return print('TRY BETWEEN 1 AND 50')
     DJ = {}
@@ -35,19 +38,23 @@ def sqrsum(n):
     
 
     if n<=30:
-        for i in range(1, n+1):
-            for j in sorted(paths(DJ,i)):
-                if len(j)==n:
-                    if j[::-1] not in results:
-                        results.append(j)
+        for i in range(1, n):
+            if len(DJ[i])==1:
+                for j in sorted(paths(DJ,i)):
+                    if len(j)==n:
+                        if j[::-1] not in results:
+                            print(j)
+                            results.append(j)
     else:
-        for i in range(1, n+1):
+        for i in range(1, n):
             for j in sorted(paths(DJ,i)):
                 if len(j)==n:
                     if j[::-1] not in results:
+                        print(j)
                         results.append(j)
     if results==[]:
         return print ('NO RESULTS')
-    for i in results:
-        print(i)
+
+    end = time.time()
     print(len(results))
+    print(end - start)

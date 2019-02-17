@@ -2,8 +2,8 @@ def sqrsum(n):
     import time
     start = time.time()
 
-    if n<=0 or n>50:
-        return print('TRY BETWEEN 1 AND 50')
+    if n<=0 or n>35:
+        return print('TRY BETWEEN 1 AND 35')
     DJ = {}
     squares = []
     results = []

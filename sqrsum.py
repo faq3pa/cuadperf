@@ -56,5 +56,5 @@ def sqrsum(n):
         return print ('NO RESULTS')
 
     end = time.time()
-    print(len(results))
-    print(end - start)
+    print(len(results),"possible results")
+    print(end - start,"seconds to process")
